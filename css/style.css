@@ -1,0 +1,117 @@
+
+                                                                      /*--------------------------------*/
+                                                                      /*           GAME BOARD           */
+                                                                      /*--------------------------------*/
+
+.board-part-1 {
+  border: 1px solid black;
+  width: 30vw;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board-part-2 {
+  border: 1px solid black;
+  width: 30vw;
+  height: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 25%;
+  text-align: center;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+.key {
+  flex: 25%;
+  text-align: center;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  color: white;
+}
+
+.first-key {
+  background-color: blue;
+}
+
+.second-key {
+  background-color: crimson;
+}
+
+.third-key {
+  background-color: crimson;
+}
+
+.fourth-key {
+  background-color: blue;
+}
+
+                                                                      /*--------------------------------*/
+                                                                      /*         Scrolling boxes        */
+                                                                      /*--------------------------------*/
+
+
+ #box1 {
+  border: 2px solid white;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  margin-left: 611px;
+  background-color: blue;
+ }
+
+ #box2 {
+  border: 2px solid white;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  margin-left: 737px;
+  background-color: crimson;
+ }
+
+ #box3 {
+  border: 2px solid white;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  margin-left: 863px;
+  background-color: crimson;
+ }
+
+ #box4 {
+  border: 2px solid white;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  margin-left: 989px;
+  background-color: blue;
+ }
+
+                                                                      /*--------------------------------*/
+                                                                      /*          Things around         */
+                                                                      /*--------------------------------*/
+
+
+body {
+  background-image: url(../images/plan.jpg);
+  background-size: cover;
+}
+
+
+#score {
+  margin-left: 1200px;
+  font-size: 50px;
+  color: white;
+  
+}
+
+#mistakes {
+color: white;
+}
