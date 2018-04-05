@@ -1,11 +1,36 @@
+
+
+var gameState = [false, false, false, false]
+var boxLoops = [startInterval1, startInterval2]
+var counts = [0,0,0,0]
+
+setInterval(function(){
+ for(var i = 0; i < 1; i++) {
+   if (!gameState[i] && counts[i] < 25) {
+    counts[i]++
+    gameState[i] = true
+    boxLoops[i]()
+   }
+ }
+
+}, 1)
+
+function resetBox(b, boxNumber) {
+  b.alt = 7
+  $("#box2").removeClass("delete")
+  b.speed = Math.floor(Math.random() * 3 + 1)
+  gameState[boxNumber] = false
+}
+
+
                                                                           /*--------------------------------*/
                                                                           /*              Box 1             */
                                                                           /*--------------------------------*/
 
 box1 = {
-  alt: 7
+  alt: 7,
+  speed: 1
 }
-
 
 function drawDivInLocation(item) {
   $("#box1").css({"top": "" + item.alt + "px"}) 
@@ -18,12 +43,21 @@ $(document).keydown(function(e) {
 });
 
 
-var intervalId = setInterval(function(){
-  box1.alt += 1;
-  drawDivInLocation(box1) 
-  if (box1.alt === 750) 
-  clearInterval(intervalId)
-}, 2);
+function startInterval1() {
+  var intervalId = setInterval(function(){
+    box1.alt += box1.speed;
+    drawDivInLocation(box1) 
+
+    if (box1.alt > 750) {
+
+      clearInterval(intervalId)
+      resetBox(box1, 0)
+    }
+    
+  }, 2);
+
+}
+
 
 
                                                                           /*--------------------------------*/
@@ -31,35 +65,35 @@ var intervalId = setInterval(function(){
                                                                           /*--------------------------------*/
 
 box2 = {
-  alt: 7
+  alt: 7,
+  speed: 1
 }
 
-
-setTimeout(function(){ function drawDivInLocation2(item) {
+function drawDivInLocation(item) {
   $("#box2").css({"top": "" + item.alt + "px"}) 
 }
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 70) && (box2.alt > 630) && (box2.alt < 705)) {
-  $("#box2").addClass("delete");
-  }
-  else if (box2.alt >= 700) {
-  $("#box2").addClass("delete");
-}
+  if((e.keyCode == 70) && (box2.alt > 630) && (box2.alt < 705));
+  $("#box2").addClass("delete")
 });
 
 
+function startInterval2() {
+  var intervalId2 = setInterval(function(){
+    box2.alt += box2.speed;
+    drawDivInLocation(box2) 
 
-var intervalId2 = setInterval(function(){
-  box2.alt += 1;
-  drawDivInLocation2(box2) 
-  if (box2.alt === 750) 
-  clearInterval(intervalId2)
-}, 5); }, Math.random()*(1000 - 3000) + 3000)
+    if (box2.alt > 750) {
 
+      clearInterval(intervalId2)
+      resetBox(box2, 1)
+    }
+  
+  }, 2);
 
-
+}
 
                                                                           /*--------------------------------*/
                                                                           /*              Box 3             */
