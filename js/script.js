@@ -13,8 +13,8 @@ function drawDivInLocation(item) {
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 68) && (box1.alt > 500) && (box1.alt < 705))
-  alert("lourd")
+  if((e.keyCode == 68) && (box1.alt > 630) && (box1.alt < 705))
+  $("#box1").addClass("delete")
 });
 
 
@@ -23,7 +23,7 @@ var intervalId = setInterval(function(){
   drawDivInLocation(box1) 
   if (box1.alt === 750) 
   clearInterval(intervalId)
-}, 1);
+}, 2);
 
 
                                                                           /*--------------------------------*/
@@ -35,15 +35,20 @@ box2 = {
 }
 
 
-function drawDivInLocation2(item) {
+setTimeout(function(){ function drawDivInLocation2(item) {
   $("#box2").css({"top": "" + item.alt + "px"}) 
 }
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 70) && (box2.alt > 500) && (box2.alt < 705))
-  alert("lourd")
+  if((e.keyCode == 70) && (box2.alt > 630) && (box2.alt < 705)) {
+  $("#box2").addClass("delete");
+  }
+  else if (box2.alt >= 700) {
+  $("#box2").addClass("delete");
+}
 });
+
 
 
 var intervalId2 = setInterval(function(){
@@ -51,7 +56,9 @@ var intervalId2 = setInterval(function(){
   drawDivInLocation2(box2) 
   if (box2.alt === 750) 
   clearInterval(intervalId2)
-}, 1);
+}, 5); }, Math.random()*(1000 - 3000) + 3000)
+
+
 
 
                                                                           /*--------------------------------*/
@@ -69,8 +76,8 @@ function drawDivInLocation3(item) {
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 74) && (box3.alt > 500) && (box3.alt < 705))
-  alert("lourd")
+  if((e.keyCode == 74) && (box3.alt > 630) && (box3.alt < 705))
+  $("#box3").addClass("delete")
 });
 
 
@@ -79,7 +86,7 @@ var intervalId3 = setInterval(function(){
   drawDivInLocation3(box3) 
   if (box3.alt === 750) 
   clearInterval(intervalId3)
-}, 1);
+}, 8);
 
 
                                                                           /*--------------------------------*/
@@ -97,8 +104,8 @@ function drawDivInLocation4(item) {
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 75) && (box4.alt > 500) && (box4.alt < 705))
-    alert("lourd")
+  if((e.keyCode == 75) && (box4.alt > 630) && (box4.alt < 705))
+    $("#box4").addClass("delete")
 });
 
 
@@ -107,4 +114,4 @@ var intervalId4 = setInterval(function(){
   drawDivInLocation4(box4) 
   if (box4.alt === 750) 
     clearInterval(intervalId4)
- }, 1);
+ }, 10);

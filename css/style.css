@@ -115,3 +115,7 @@ body {
 #mistakes {
 color: white;
 }
+
+.delete {
+  display: none;
+}
