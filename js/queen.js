@@ -42,7 +42,7 @@ function resetBox(b, boxNumber) {
   b.speed = Math.random() * (max - min) + min;
   gameState[boxNumber] = false
 }
-
+ 
                                                                           /*--------------------------------*/
                                                                           /*              Box 1             */
                                                                           /*--------------------------------*/
@@ -82,4 +82,4 @@ function startInterval() {
     }
     
   }, 2);
-}
+}  
