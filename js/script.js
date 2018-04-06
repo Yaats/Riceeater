@@ -17,11 +17,10 @@ setInterval(function(){
 
 function resetBox(b, boxNumber) {
   b.alt = 7
-  $("#box2").removeClass("delete")
+  $("#box1").removeClass("delete")
   b.speed = Math.floor(Math.random() * 3 + 1)
   gameState[boxNumber] = false
 }
-
 
                                                                           /*--------------------------------*/
                                                                           /*              Box 1             */
@@ -32,7 +31,7 @@ box1 = {
   speed: 1
 }
 
-function drawDivInLocation(item) {
+function drawDivInLocation1(item) {
   $("#box1").css({"top": "" + item.alt + "px"}) 
 }
 
@@ -44,13 +43,13 @@ $(document).keydown(function(e) {
 
 
 function startInterval1() {
-  var intervalId = setInterval(function(){
+  var intervalId1 = setInterval(function(){
     box1.alt += box1.speed;
-    drawDivInLocation(box1) 
+    drawDivInLocation1(box1) 
 
     if (box1.alt > 750) {
 
-      clearInterval(intervalId)
+      clearInterval(intervalId1)
       resetBox(box1, 0)
     }
     
@@ -69,26 +68,28 @@ box2 = {
   speed: 1
 }
 
-function drawDivInLocation(item) {
+function drawDivInLocation2(item) {
   $("#box2").css({"top": "" + item.alt + "px"}) 
 }
 
 
 $(document).keydown(function(e) {  
-  if((e.keyCode == 70) && (box2.alt > 630) && (box2.alt < 705));
+  if((e.keyCode == 70) && (box2.alt > 7) && (box2.alt < 705))  
+    console.log("nice")
   $("#box2").addClass("delete")
+  
 });
 
 
 function startInterval2() {
   var intervalId2 = setInterval(function(){
     box2.alt += box2.speed;
-    drawDivInLocation(box2) 
+    drawDivInLocation2(box2) 
 
     if (box2.alt > 750) {
 
       clearInterval(intervalId2)
-      resetBox(box2, 1)
+      resetBox2(box2, 1)
     }
   
   }, 2);
@@ -124,7 +125,7 @@ var intervalId3 = setInterval(function(){
 
 
                                                                           /*--------------------------------*/
-                                                                          /*              Box 4              */
+                                                                          /*              Box 4             */
                                                                           /*--------------------------------*/
 
 
